@@ -1,0 +1,18 @@
+/*
+Given a string num which represents an integer, return true *if* num *is a **strobogrammatic number***.
+
+A **strobogrammatic number** is a number that looks the same when rotated 180 degrees (looked at upside down).    */
+
+bool rotate(char x){
+    if(x=='6' || x=='8' || x=='9' || x=='0')return true; 
+    else return false; 
+}
+
+int main() {
+    
+    string s = "697";
+    for(int i=0;i<s.length();i++){
+        if(not rotate(s[i]))return false;
+    }
+    return true; 
+}
