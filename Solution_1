@@ -1,0 +1,27 @@
+/*
+ **Question 1**
+
+Given two strings s and t, *determine if they are isomorphic*.
+
+Two strings s and t are isomorphic if the characters in s can be replaced to get t.
+
+All occurrences of a character must be replaced with another character while preserving the order of characters. No two characters may map to the same character, but a character may map to itself.
+*/
+
+
+bool isIsomorphic(string s, string t) {
+        if(s.size()!=t.size())return false; 
+        vector<int> freq1(128, -1);
+        vector<int> freq2(128, -1);
+        int n= s.size(); 
+        for(int i=0;i<n; i++){
+            if(freq1[s[i]]==freq2[t[i]]){
+                freq1[s[i]]=i;
+                freq2[t[i]]=i;
+            }
+            else{
+                 return false;}
+        }
+        return true; 
+        
+    }
